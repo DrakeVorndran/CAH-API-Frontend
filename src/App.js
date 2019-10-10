@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './theme.css';
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
+
+import Home from './pages/Home'
+import Key from './pages/Key'
+import LogIn from './pages/LogIn'
+import SignUp from './pages/SignUp'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav className="navbar">
+          <ul>
+            <li className="title"><Link to="/">
+              <h1>CAH API</h1>
+            </Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/key">My Key</Link></li>
+          </ul>
+          <ul>
+            <li><Link to="/login">Log In</Link></li>
+            <li><Link to="/signup">Sign Up</Link></li>
+            <li><Link to="/out">Log Out</Link></li>
+          </ul>
+        </nav>
+        <div className='container' >
+          <Route exact path='/' component={Home} /> 
+          <Route exact path='/key' component={Key} /> 
+          <Route exact path='/login' component={LogIn} /> 
+          <Route exact path='/signup' component={SignUp} /> 
+        </div>
+      </div>
+    </Router>
   );
 }
 

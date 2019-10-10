@@ -1,22 +1,355 @@
-.App {
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: var(--color-md-light);
+  font-family: var(--font-stack);
+  color: var(--color-foreground);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100vh;
+  font-size: 1.2em;
+}
+
+/* Navbar css */
+nav.navbar.fixed {
+  position: fixed;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--color-foreground);
+}
+
+nav.navbar {
+  width: 100vw;
+  height: 10vh;
+  letter-spacing: 3px;
+  background-color: var(--color-foreground);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav.navbar ul {
+  padding: 0px;
+  margin: 0px;
+  width: 50%;
+  max-width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  font-family: var(--font-bold);
+}
+ 
+nav.navbar ul:first-of-type {
+  max-width: 500px;
+}
+
+nav.navbar ul li a {
+  color: var(--color-background);
+  text-decoration: none;
+}
+
+nav.navbar ul li a h1 {
+  font-family: var(--font-bold);
+}
+
+nav.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+footer.footer {
+  background: var(--color-foreground);
+  color: var(--color-background);
+  padding: 20px;
+}
+
+footer.footer ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+footer.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer.footer a:hover {
+  color: var(--color-primary);
+}
+
+footer.footer > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer.footer > ul ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+footer.footer > ul ul > li {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li.title {
+  font-size: 2em;
+}
+
+.container {
+  --background-color: var(--color-background);
+  background-color: var(--background-color);
+  width: 88%;
+  margin: 5%;
+  padding: 1%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.App-link {
-  color: #09d3ac;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headers);
+  padding: 0px;
+  margin: 0px;
+  line-height: 2em;
 }
+
+strong {
+  font-family: var(--font-bold);
+}
+
+button {
+  --background-color: var(--color-primary);
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid var(--background-color);
+  border-radius: 10px;
+  background-color: var(--background-color);
+  font-size: 1.2em;
+  color: var(--color-background);
+  cursor: pointer;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+button:hover {
+  background: var(--color-background);
+  border: 2px solid var(--background-color);
+  color: var(--background-color);
+}
+
+.button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-group button {
+  border-color: var(--color-background);
+  border-radius: 0px;
+  margin: 0px;
+}
+
+.button-group button:first-child {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.button-group button:last-child {
+  border-radius: 0px 10px 10px 0px;
+}
+
+input {
+  --background-color: var(--color-background);
+  --hover-color: var(--color-primary);
+  padding: 10px;
+  margin: 5px;
+  font-size: 1em;
+  color: var(--color-foreground);
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+input[type="text"], input[type="password"] {
+  border-radius: 5px 5px 0px 0px;
+  background: var(--background-color);
+  border: none;
+  border-bottom: 2px solid var(--color-foreground);
+}
+
+input:hover {
+  --background-color: var(--color-input-focus);
+}
+
+.input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alert {
+  margin: 20px;
+  padding: 20px;
+  --background-color: var(--color-primary);
+  background: var(--background-color);
+  width: 80%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.alert span {
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.alert span:hover {
+  color: var(--color-background);
+}
+
+.badge {
+  display: inline-block;
+  --background-color: var(--color-primary);
+  padding: 10px;
+  background: var(--background-color);
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+}
+
+.card {
+  --background-color: var(--color-background);
+  background: var(--background-color);
+  -webkit-box-shadow: 3px 3px 3px var(--color-md-dark);
+          box-shadow: 3px 3px 3px var(--color-md-dark);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid var(--color-md-dark);
+  border-radius: 10px;
+  font-size: .8em;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+table {
+  border: black 3px solid;
+  width: 80%;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+}
+
+th {
+  border-bottom: 2px solid black;
+}
+
+th,
+td {
+  margin: 0px;
+  padding: 10px;
+  border-left: black solid 1px;
+}
+
+th:first-child, td:first-child {
+  border-left: 0px;
+}
+
+table tr:nth-child(even) * {
+  background: var(--color-md-light);
+}
+
+th {
+  font-family: var(--font-bold);
+}
+
+.danger {
+  --background-color: var(--color-danger);
+}
+
+.success {
+  --background-color: var(--color-success);
+}
+
+.callout {
+  --background-color: var(--color-callout);
+}
+/*# sourceMappingURL=fwk.css.map */
